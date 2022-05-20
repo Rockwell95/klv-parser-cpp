@@ -1,0 +1,3 @@
+// the configured options and settings for Tutorial
+#define StanagKlvParser_VERSION_MAJOR @StanagKlvParser_VERSION_MAJOR@
+#define StanagKlvParser_VERSION_MINOR @StanagKlvParser_VERSION_MINOR@

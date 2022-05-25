@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE C_STANDARD 17)
 set(CMAKE C_STANDARD_REQUIRED True)
 
-set(HEADERS klvparser/StreamParser.h)
-set(SOURCES klvparser.cpp klvparser/StreamParser.cpp)
+set(HEADERS klvparser/StreamParser.h klvparser/common.h klvparser/KLVParser.h)
+set(SOURCES klvparser.cpp klvparser/StreamParser.cpp klvparser/common.cpp klvparser/KLVParser.cpp)
 
 # add the executable
 add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})

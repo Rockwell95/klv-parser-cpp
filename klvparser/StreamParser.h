@@ -3,27 +3,30 @@
 
 #include <string>
 #include <unordered_map>
+#include <fstream>
 #include "KLVParser.h"
 
 using std::string;
 using std::unordered_map;
 using std::byte;
 
-class StreamParser
-{
+class StreamParser {
 private:
-    unordered_map<byte, byte> parsers;
+    unordered_map<byte, byte> _parsers;
 
-    std::ifstream source;
-    KLVParser iterStream;
+    std::ifstream _source;
+    KLVParser _iterStream;
 
-    unordered_map<byte, byte>::iterator begin;
-    unordered_map<byte, byte>::iterator current;
-    unordered_map<byte, byte>::iterator end;
+    unordered_map<byte, byte>::iterator _current;
 
 public:
-    StreamParser(const std::ifstream& source);
+    explicit StreamParser(std::ifstream &source);
+
     ~StreamParser() = default;
+
+    unordered_map<byte, byte>::iterator begin();
+    unordered_map<byte, byte>::iterator end();
+
     void addParser(byte parser);
 };
 
